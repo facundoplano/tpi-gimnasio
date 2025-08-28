@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-        <h1>Gimnasio</h1>
+        <h1>Gimnasio Inicio</h1>
     </>
   )
 }
