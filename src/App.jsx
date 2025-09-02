@@ -1,13 +1,10 @@
 
 import './App.css'
+import Login from './login'
 
 function App() {
 
-  return (
-    <>
-        <h1>Gimnasio Inicio</h1>
-    </>
-  )
+  return <Login />
 }
 
 export default App
