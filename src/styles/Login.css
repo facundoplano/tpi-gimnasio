@@ -1,0 +1,29 @@
+.main-container {
+    background-image: url("../assets/images/background_login.jpg");
+    background-size: cover;        /* La imagen ocupa toda la pantalla */
+    background-position: center;   /* Centrada */
+    background-repeat: no-repeat;
+    min-height: 100vh;             /* Ocupa toda la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-custom {
+    background-color: rgba(0, 0, 0, 0.6); /* negro con 60% de opacidad */
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .btn-custom {
+    background-color: #6c63ff;
+    border: none;
+  }
+  .btn-custom:hover {
+    background-color: #5a54d1;
+  }
+  
