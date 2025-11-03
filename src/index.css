@@ -2,7 +2,7 @@
 
 /* Colores principales */
 :root {
-  --primary-color: #5c4dc9;
+  --primary-color: #808080;
   --secondary-color: #f4f2ff;
   --text-color: #333;
   --radius: 1rem;
@@ -35,7 +35,7 @@ body {
 }
 
 .btn-custom:hover {
-  background-color: #4b3cb3;
+  background-color: #808080;
 }
 
 /* Inputs */
