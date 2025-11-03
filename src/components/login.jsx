@@ -1,22 +1,24 @@
 import { useState, useRef } from "react";
-import { Form, Button, Card, Container } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "../styles/Login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const emailRef = useRef(null);
   const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (email === "admin@admin.com" && password === "1234") {
-      navigate("/home");
-    } else {
-      alert("Usuario o contraseña incorrectos");
-      emailRef.current.focus();
-    }
+    const { email, password } = formData;
+  
+    email === "admin@admin.com" && password === "1234"
+      ? navigate("/home")
+      : (alert("Usuario o contraseña incorrectos"), emailRef.current.focus());
   };
 
   return (
@@ -28,10 +30,11 @@ const Login = () => {
             <Form.Label>Usuario</Form.Label>
             <Form.Control
               type="email"
+              name="email"
               placeholder="Ingrese su email"
-              value={email}
+              value={formData.email}
               ref={emailRef}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleChange}
               required
             />
           </Form.Group>
@@ -40,9 +43,10 @@ const Login = () => {
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
               type="password"
+              name="password"
               placeholder="Ingrese su contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={handleChange}
               required
             />
           </Form.Group>
